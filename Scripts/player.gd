@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var player_speed : float = 100; # Speed in pixels per second
+@export var player_speed : float = 300; # Speed in pixels per second
 
 func _physics_process (delta: float):
 

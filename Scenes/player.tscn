@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b35uon1hxks68"]
+[gd_scene load_steps=8 format=3 uid="uid://b35uon1hxks68"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_dduwg"]
 [ext_resource type="Texture2D" uid="uid://ck7nliifkr3eo" path="res://Textures/Heister2.png" id="2_gioq4"]
@@ -44,6 +44,9 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_55pfx"]
+size = Vector2(3, 48)
+
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("player_sprite")]
 script = ExtResource("1_dduwg")
 player_sprite = NodePath("AnimatedSprite2D")
@@ -59,7 +62,17 @@ sprite_frames = SubResource("SpriteFrames_nkxui")
 animation = &"jump"
 offset = Vector2(0, -16)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -37)
-process_callback = 0
-position_smoothing_enabled = true
+[node name="LeftWallDetect" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWallDetect"]
+position = Vector2(-16, -26)
+shape = SubResource("RectangleShape2D_55pfx")
+
+[node name="RightWallDetect" type="Area2D" parent="."]
+position = Vector2(27, 0)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWallDetect"]
+position = Vector2(-11, -26)
+shape = SubResource("RectangleShape2D_55pfx")

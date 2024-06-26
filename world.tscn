@@ -7,17 +7,54 @@ size = Vector2(349, 52)
 
 [node name="World" type="Node2D"]
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(524, 258)
+process_callback = 0
+
 [node name="Player" parent="." instance=ExtResource("1_22vpi")]
 position = Vector2(524, 258)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(358, 301)
+collision_layer = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(164.5, 16)
 shape = SubResource("RectangleShape2D_odk57")
 
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 339.0
+offset_bottom = 42.0
+color = Color(0.186, 0.1902, 0.2, 1)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(232, 250)
+rotation = -1.5708
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(164.5, 16)
+shape = SubResource("RectangleShape2D_odk57")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D2"]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 339.0
+offset_bottom = 42.0
+color = Color(0.186, 0.1902, 0.2, 1)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(382, 95)
+rotation = -1.5708
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(164.5, 16)
+shape = SubResource("RectangleShape2D_odk57")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D3"]
 offset_left = -10.0
 offset_top = -10.0
 offset_right = 339.0

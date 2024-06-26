@@ -16,11 +16,12 @@ func _exit_tree():
     player = null
 
 func _ready():
-    instance = self
-    player = $Player
+    Game.instance = self
+    Game.player = $Player
+    
 
 func _process(delta):
-    print(suspicion_time)
+    
     suspicion_time -= suspicion_decay * delta
     if suspicion_time < 0:
         suspicion_time = 0

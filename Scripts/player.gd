@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name Player
+
 @export var player_speed : float = 300; # Speed in pixels per second
 @export var gravity : float = 980; # Gravity in pixels per second squared
 

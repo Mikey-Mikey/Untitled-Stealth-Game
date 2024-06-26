@@ -1,7 +1,8 @@
 Todo list :)
 
 
-- [ ] Player Controller
+- [+] Player Controller
+    - [ ] Dash maybe?
 - [ ] Game Loop
     - [ ] Simple modular detection script
     - [ ] Game over  

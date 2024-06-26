@@ -1,0 +1,1 @@
+A simple stealth game where you have to get something then get out without detection. If you get detected you have to resart the game.

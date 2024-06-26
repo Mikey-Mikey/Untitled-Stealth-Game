@@ -44,4 +44,14 @@ func _player_detected(delta):
     Game.instance.suspicion += delta
 
 func _draw():
-    draw_arc(Vector2.ZERO, detection_distance, -fov_rad() / 2, fov_rad() / 2, 16, Color(1, 0, 0, 0.5))
+    for i in range(0, 4):
+
+        draw_arc(
+            Vector2(0, 0),
+            detection_distance * (i / 4.0),
+            -fov_rad() / 2,
+            fov_rad() / 2,
+            16,
+            Color(1, 0, 0, 1.0)
+        )
+    

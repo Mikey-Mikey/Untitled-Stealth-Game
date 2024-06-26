@@ -5,6 +5,7 @@ Todo list :)
     - [ ] Dash maybe?
 - [ ] Game Loop
     - [ ] Simple modular detection script
+        - [ ] Need to find a way to display the fov and all that junk
     - [ ] Game over  
     - [ ] Simple enemy ai
 - [ ] Assets

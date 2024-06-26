@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://4s566upc6the" path="res://Textures/Heister3.png" id="4_jhvwe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pjbm3"]
-size = Vector2(36, 75)
+size = Vector2(24, 50)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nkxui"]
 animations = [{
@@ -17,6 +17,14 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_jhvwe")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -36,20 +44,20 @@ animations = [{
 "speed": 6.0
 }]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("player_sprite")]
 script = ExtResource("1_dduwg")
+player_sprite = NodePath("AnimatedSprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -38)
+position = Vector2(0, -25)
 shape = SubResource("RectangleShape2D_pjbm3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(0, -48)
-scale = Vector2(3, 3)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_nkxui")
-animation = &"run"
-frame_progress = 0.426377
+animation = &"jump"
+offset = Vector2(0, -16)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -37)

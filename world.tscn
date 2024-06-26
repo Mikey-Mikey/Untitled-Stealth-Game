@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://ch3oa16vrfsn7"]
+[gd_scene load_steps=4 format=3 uid="uid://d4npwi634bhr0"]
 
 [ext_resource type="PackedScene" uid="uid://b35uon1hxks68" path="res://Scenes/player.tscn" id="1_22vpi"]
+[ext_resource type="PackedScene" uid="uid://butlpm62pj33k" path="res://Scenes/camera.tscn" id="2_e3rn2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_odk57"]
 size = Vector2(349, 52)
@@ -23,3 +24,7 @@ offset_top = -10.0
 offset_right = 339.0
 offset_bottom = 42.0
 color = Color(0.186, 0.1902, 0.2, 1)
+
+[node name="Camera" parent="." instance=ExtResource("2_e3rn2")]
+position = Vector2(283, 132)
+rotation = 0.544153

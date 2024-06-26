@@ -12,6 +12,7 @@ font_size = 12
 
 [node name="Detector" type="Node2D" parent="."]
 script = ExtResource("1_cbcqr")
+detection_distance = 200.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("PlaceholderTexture2D_bg6a0")

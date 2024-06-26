@@ -16,7 +16,7 @@ func _physics_process (delta: float):
     if movement_x != 0:
         player_sprite.flip_h = movement_x > 0
 
-    if abs(velocity.x) > 5:
+    if abs(velocity.x) > 15:
         player_sprite.play("run")
         player_sprite.speed_scale = abs(velocity.x * 0.006)
     elif is_on_floor():
@@ -28,7 +28,8 @@ func _physics_process (delta: float):
         player_sprite.play("jump")
         velocity.y += gravity * delta
         velocity.x += (movement_x * player_speed - velocity.x) * 0.05
-    else:
+    
+    if is_on_floor() or left_wall_detect.has_overlapping_bodies() or right_wall_detect.has_overlapping_bodies():
         velocity.x += (movement_x * player_speed - velocity.x) * 0.2
 
     if Input.is_action_just_pressed("jump"):
@@ -37,8 +38,13 @@ func _physics_process (delta: float):
         
         if left_wall_detect.has_overlapping_bodies():
             velocity.x = player_speed
+            player_sprite.flip_h = true
         
         if right_wall_detect.has_overlapping_bodies():
             velocity.x = -player_speed
+            player_sprite.flip_h = false
+
+    if left_wall_detect.has_overlapping_bodies() and movement_x < 0 or right_wall_detect.has_overlapping_bodies() and movement_x > 0:
+        velocity.y = min(velocity.y, 90)
 
     move_and_slide()

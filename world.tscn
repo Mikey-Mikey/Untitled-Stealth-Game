@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://d4npwi634bhr0"]
+[gd_scene load_steps=4 format=3 uid="uid://ch3oa16vrfsn7"]
 
 [ext_resource type="PackedScene" uid="uid://b35uon1hxks68" path="res://Scenes/player.tscn" id="1_22vpi"]
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_bcia4"]
-[ext_resource type="PackedScene" uid="uid://butlpm62pj33k" path="res://Scenes/camera.tscn" id="2_e3rn2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_odk57"]
 size = Vector2(349, 52)
